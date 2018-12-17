@@ -111,6 +111,7 @@ fn main() {
         cfg.header("sys/socket.h");
         if linux && !musl {
             cfg.header("linux/if.h");
+            cfg.header("linux/if_addr.h");
             cfg.header("sys/auxv.h");
         }
         cfg.header("sys/time.h");
@@ -261,6 +262,7 @@ fn main() {
         if !emscripten {
             cfg.header("linux/sockios.h");
             cfg.header("linux/netlink.h");
+            cfg.header("linux/rtnetlink.h");
             cfg.header("linux/genetlink.h");
             cfg.header("linux/netfilter_ipv4.h");
             cfg.header("linux/netfilter_ipv6.h");
